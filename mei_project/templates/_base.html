@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} MEI - Home {% endblock %}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/_base.css' %}?v=1" />
+</head>
+
+<body>
+  <!-- Hamburger Menu Button -->
+  <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="main-home-container">
+    {% include "components/sidebar.html" %}
+    <div class="home-content-container">{% block content %} {% endblock %}</div>
+  </div>
+
+  <script src="{% static 'js/sidebar.js' %}"></script>
+</body>
+
+</html>

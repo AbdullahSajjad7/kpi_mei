@@ -1,0 +1,181 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %} MEI - Resources {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/resources.css' %}" />
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+
+<div class="resources-container">
+    <!-- Main Header -->
+    <div class="resources-header">
+        <h1 class="resources-title">Resources</h1>
+        <p class="resources-subtitle">Shared presentations, Co-branding opportunities, press release examples/kits</p>
+    </div>
+
+    <!-- Section 1: Madison Energy Infrastructure Brand Assets -->
+    <div class="resource-section">
+        <div class="resource-section-header">
+            <h2 class="resource-section-title">Madison Energy Infrastructure Brand Assets</h2>
+            <p class="resource-section-subtitle">Use the following files and treatment when referring to MEI in
+                co-branded collateral.</p>
+        </div>
+
+        <div class="resource-grid">
+            <!-- Card 1 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/branding-full.png' %}" alt="Branding Full Logo" class="asset-logo">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">MEI Logo Full Color</h3>
+                    <p class="resource-card-date">Last Updated: Dec 20, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        Download
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/brand-name.png' %}" alt="Brand Name" class="asset-logo">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">MEI Brand Wordmark</h3>
+                    <p class="resource-card-date">Last Updated: Dec 20, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        Download
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/logo-2.png' %}" alt="Logo 2" class="asset-logo">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">MEI Icon Lime</h3>
+                    <p class="resource-card-date">Last Updated: Dec 20, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        Download
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo" class="asset-logo">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">MEI Symbol Black</h3>
+                    <p class="resource-card-date">Last Updated: Dec 20, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        Download
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Projects Assets -->
+    <div class="resource-section">
+        <div class="resource-section-header">
+            <h2 class="resource-section-title">Projects Assets</h2>
+            <p class="resource-section-subtitle">Download technical specifications and site layout assets for your
+                projects.</p>
+        </div>
+
+        <div class="resource-grid">
+            <!-- Card 1 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/home-welcome-banner.png' %}" alt="Project Site Asset"
+                        class="project-asset-img">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">Project Site Overview</h3>
+                    <p class="resource-card-date">Last Updated: Dec 22, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        Download
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/home-welcome-banner.png' %}" alt="Project Layout"
+                        class="project-asset-img">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">Site Map Visualization</h3>
+                    <p class="resource-card-date">Last Updated: Dec 22, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        Download
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/home-welcome-banner.png' %}" alt="Technical Specs"
+                        class="project-asset-img">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">Technical Data Sheet</h3>
+                    <p class="resource-card-date">Last Updated: Dec 22, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        Download
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="resource-card">
+                <div class="resource-card-image-wrapper">
+                    <img src="{% static 'images/home-welcome-banner.png' %}" alt="Asset Report"
+                        class="project-asset-img">
+                    <div class="preview-eye">
+                        <img src="{% static 'images/icons/eye-icon.png' %}" alt="Preview">
+                    </div>
+                </div>
+                <div class="resource-card-content">
+                    <h3 class="resource-card-name">Monthly Asset Report</h3>
+                    <p class="resource-card-date">Last Updated: Dec 22, 2025</p>
+                    <a href="#" class="resource-download-btn">
+                        <img src="{% static 'images/icons/download-icon.png' %}" alt="Download">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "components/footer.html" %}
+{% endblock %}

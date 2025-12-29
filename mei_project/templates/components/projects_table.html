@@ -1,0 +1,34 @@
+<div class="home-projects-table-container">
+    <table class="home-projects-table">
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Stage</th>
+                <th>State</th>
+                <th>Total kW DC</th>
+                <th>Project Type</th>
+                <th>Solution</th>
+                <th>Offtake Type</th>
+            </tr>
+        </thead>
+        <tbody id="projects-table-body">
+            {% for project in projects %}
+            <tr class="project-row" data-stage="{{ project.stage }}" data-state="{{ project.state }}"
+                data-type="{{ project.project_type }}" data-solution="{{ project.solution }}"
+                data-offtake="{{ project.offtake_type }}" data-kw="{{ project.total_kw_dc }}">
+                <td>{{ project.name }}</td>
+                <td>{{ project.stage }}</td>
+                <td>{{ project.state }}</td>
+                <td>{{ project.total_kw_dc }}</td>
+                <td>{{ project.project_type }}</td>
+                <td>{{ project.solution }}</td>
+                <td>{{ project.offtake_type }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7">No projects found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

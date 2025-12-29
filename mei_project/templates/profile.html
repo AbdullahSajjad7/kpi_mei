@@ -1,0 +1,55 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %} MEI - Profile {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+
+<div class="profile-container">
+    <div class="profile-content">
+        <div class="profile-form-section">
+            <h1 class="profile-header">My Account</h1>
+
+            {% if success %}
+            <div class="profile-message profile-success">{{ success }}</div>
+            {% endif %}
+
+            {% if error %}
+            <div class="profile-message profile-error">{{ error }}</div>
+            {% endif %}
+
+            <form class="custom-form profile-form" method="post">
+                {% csrf_token %}
+
+                <div class="custom-form-group">
+                    <label class="custom-form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="custom-form-input profile-input"
+                        value="{{ request.session.user_name }}" required />
+                </div>
+
+                <div class="custom-form-group">
+                    <label class="custom-form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="custom-form-input profile-input"
+                        value="{{ request.session.user_email }}" required />
+                </div>
+
+                <div class="custom-form-group">
+                    <label class="custom-form-label" for="password">New Password (leave blank to keep current)</label>
+                    <input type="password" id="password" name="password" class="custom-form-input profile-input" />
+                </div>
+
+                <button type="submit" class="custom-primary-button">Save Changes</button>
+            </form>
+
+            <a href="{% url 'logout' %}" class="custom-secondary-button profile-logout-btn">Logout</a>
+        </div>
+
+        <div class="profile-banner-section">
+            <div class="profile-welcome-banner">
+                <img src="{% static 'images/profile-page-banner.png' %}" alt="Welcome Banner" />
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base_auth.html" %} {% block title %} Create Account {% endblock %}
+{% block content %}
+<div class="auth-form-text">Create new account</div>
+<div class="auth-form">
+  <form class="custom-form" action="{% url 'create_account' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group custom-form-group">
+      <label class="custom-form-label" for="name">Name</label>
+      <input class="custom-form-input" type="text" id="name" name="name" />
+    </div>
+    <div class="form-group custom-form-group">
+      <label class="custom-form-label" for="email">Email</label>
+      <input class="custom-form-input" type="text" id="email" name="email" />
+    </div>
+    <div class="form-group custom-form-group">
+      <label class="custom-form-label" for="password">Password</label>
+      <input class="custom-form-input" type="password" id="password" name="password" />
+    </div>
+    <div class="form-group custom-form-group">
+      <label class="custom-form-label" for="confirm_password">Confirm Password</label>
+      <input class="custom-form-input" type="password" id="confirm_password" name="confirm_password" />
+    </div>
+    <div class="auth-buttons-container">
+      <button class="custom-primary-button" type="submit">
+        Create Account
+      </button>
+      <a class="custom-link custom-auth-form-link" href="{% url 'login' %}">Already have an account ?</a>
+    </div>
+  </form>
+  <div id="error-container" class="auth-error" style="display: none;"><span></span></div>
+  {% if error %}
+  <div class="auth-error"><span>{{ error }}</span></div>
+  {% endif %}
+</div>
+
+<script>
+  document.querySelector('.custom-form').addEventListener('submit', function (e) {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+    const errorContainer = document.getElementById('error-container');
+    const errorSpan = errorContainer.querySelector('span');
+
+    // Clear previous errors
+    errorContainer.style.display = 'none';
+    errorSpan.textContent = '';
+
+    if (password !== confirmPassword) {
+      e.preventDefault();
+      // Show error in the container
+      errorSpan.textContent = 'Passwords do not match!';
+      errorContainer.style.display = 'flex';
+    }
+  });
+</script>
+{% endblock %}

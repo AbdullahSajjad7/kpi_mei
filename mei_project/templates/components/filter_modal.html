@@ -1,0 +1,77 @@
+{% load static %}
+<div id="filter-modal" class="filter-modal-overlay">
+    <div class="filter-modal-container">
+        <div class="filter-modal-header">
+            <div></div> <!-- Spacer for centering -->
+            <h2>All Filters</h2>
+            <button class="modal-close-btn" id="modal-close-x">&times;</button>
+        </div>
+        <div class="filter-modal-body">
+            <div class="filter-modal-section" data-filter-type="stage">
+                <h3 class="filter-section-title">Stage</h3>
+                <div class="filter-pill-container">
+                    <button class="filter-pill"><span class="tick-icon"></span>Pre Contract</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>In Development</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>In Construction</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>Operating</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>Cancelled</button>
+                </div>
+            </div>
+
+            <div class="filter-modal-section" data-filter-type="type">
+                <h3 class="filter-section-title">Project Type</h3>
+                <div class="filter-pill-container">
+                    <button class="filter-pill"><span class="tick-icon"></span>BESS</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>Carport</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>Floating</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>Ground</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>Roof</button>
+                </div>
+            </div>
+
+            <div class="filter-modal-section" data-filter-type="solution">
+                <h3 class="filter-section-title">Solution</h3>
+                <div class="filter-pill-container">
+                    <button class="filter-pill"><span class="tick-icon"></span>BESS</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>Solar</button>
+                </div>
+            </div>
+
+            <div class="filter-modal-section" data-filter-type="offtake">
+                <h3 class="filter-section-title">Offtake Type</h3>
+                <div class="filter-pill-container">
+                    <button class="filter-pill"><span class="tick-icon"></span>Op Lease</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>PPA</button>
+                    <button class="filter-pill"><span class="tick-icon"></span>VPPA</button>
+                </div>
+            </div>
+
+            <div class="filter-modal-section">
+                <h3 class="filter-section-title">Total kW DC</h3>
+                <div class="range-slider-container">
+                    <div class="range-values">
+                        <div class="range-input-container">
+                            <input type="number" id="min-kw-val" class="custom-form-input kw-input-field" value="0"
+                                min="0" max="5000">
+                            <span class="kw-unit">kW</span>
+                        </div>
+                        <div class="range-input-container">
+                            <input type="number" id="max-kw-val" class="custom-form-input kw-input-field" value="5000"
+                                min="0" max="5000">
+                            <span class="kw-unit">kW</span>
+                        </div>
+                    </div>
+                    <div class="range-slider">
+                        <div class="slider-track" id="slider-track"></div>
+                        <input type="range" min="0" max="5000" value="0" id="min-kw-range" class="min-range">
+                        <input type="range" min="0" max="5000" value="5000" id="max-kw-range" class="max-range">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter-modal-footer">
+            <button class="modal-action-btn modal-clear-btn" id="modal-clear-btn">Clear</button>
+            <button class="modal-action-btn modal-ok-btn" id="modal-ok-btn">OK</button>
+        </div>
+    </div>
+</div>

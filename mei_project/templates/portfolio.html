@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block home_content %}
+<div class="home-content-body">
+    <div style="margin-bottom: 20px;">
+        <input type="text" id="portfolio-search" placeholder="Search for a Project..."
+            class="custom-form-input portfolio-search-input">
+    </div>
+
+    {% include "components/filters.html" %}
+    <script src="{% static 'js/filters.js' %}"></script>
+
+    {% include "components/projects_table.html" %}
+</div>
+
+{% include "components/filter_modal.html" %}
+
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock %}

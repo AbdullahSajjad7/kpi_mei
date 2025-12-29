@@ -1,0 +1,86 @@
+{% load static %}
+<div class="home-filter-bar" id="custom-filter-bar">
+    <button id="all-filters-btn" class="custom-dropdown-btn all-filters-btn" style="display: none;">
+        <img src="{% static 'images/icons/all-filters-icon.png' %}" alt="" class="filter-icon">
+        All Filters
+    </button>
+
+    <div class="custom-dropdown" data-filter-type="stage">
+        <button class="custom-dropdown-btn">
+            Stage
+            <span class="dropdown-arrow"></span>
+        </button>
+        <div class="custom-dropdown-content">
+            <label class="checkbox-item"><input type="checkbox" value="Pre Contract"> Pre Contract</label>
+            <label class="checkbox-item"><input type="checkbox" value="In Development"> In Development</label>
+            <label class="checkbox-item"><input type="checkbox" value="In Construction"> In Construction</label>
+            <label class="checkbox-item"><input type="checkbox" value="Operating"> Operating</label>
+            <label class="checkbox-item"><input type="checkbox" value="Cancelled"> Cancelled</label>
+        </div>
+    </div>
+
+    <div class="custom-dropdown" data-filter-type="type">
+        <button class="custom-dropdown-btn">
+            Project Type
+            <span class="dropdown-arrow"></span>
+        </button>
+        <div class="custom-dropdown-content">
+            <label class="checkbox-item"><input type="checkbox" value="BESS"> BESS</label>
+            <label class="checkbox-item"><input type="checkbox" value="Carport"> Carport</label>
+            <label class="checkbox-item"><input type="checkbox" value="Floating"> Floating</label>
+            <label class="checkbox-item"><input type="checkbox" value="Ground"> Ground</label>
+            <label class="checkbox-item"><input type="checkbox" value="Roof"> Roof</label>
+        </div>
+    </div>
+
+    <div class="custom-dropdown" data-filter-type="solution">
+        <button class="custom-dropdown-btn">
+            Solution
+            <span class="dropdown-arrow"></span>
+        </button>
+        <div class="custom-dropdown-content">
+            <label class="checkbox-item"><input type="checkbox" value="BESS"> BESS</label>
+            <label class="checkbox-item"><input type="checkbox" value="Solar"> Solar</label>
+        </div>
+    </div>
+
+    <div class="custom-dropdown" data-filter-type="offtake">
+        <button class="custom-dropdown-btn">
+            Offtake Type
+            <span class="dropdown-arrow"></span>
+        </button>
+        <div class="custom-dropdown-content">
+            <label class="checkbox-item"><input type="checkbox" value="Op Lease"> Op Lease</label>
+            <label class="checkbox-item"><input type="checkbox" value="PPA"> PPA</label>
+            <label class="checkbox-item"><input type="checkbox" value="VPPA"> VPPA</label>
+        </div>
+    </div>
+
+    <div class="custom-dropdown" data-filter-type="kw">
+        <button class="custom-dropdown-btn">
+            Total kW DC
+            <span class="dropdown-arrow"></span>
+        </button>
+        <div class="custom-dropdown-content kw-range-dropdown">
+            <div class="range-slider-container">
+                <div class="range-values">
+                    <div class="range-input-container">
+                        <input type="number" id="bar-min-kw-val" class="custom-form-input kw-input-field" value="0"
+                            min="0" max="5000">
+                        <span class="kw-unit">kW</span>
+                    </div>
+                    <div class="range-input-container">
+                        <input type="number" id="bar-max-kw-val" class="custom-form-input kw-input-field" value="5000"
+                            min="0" max="5000">
+                        <span class="kw-unit">kW</span>
+                    </div>
+                </div>
+                <div class="range-slider">
+                    <div class="slider-track" id="bar-slider-track"></div>
+                    <input type="range" min="0" max="5000" value="0" id="bar-min-kw-range" class="min-range">
+                    <input type="range" min="0" max="5000" value="5000" id="bar-max-kw-range" class="max-range">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

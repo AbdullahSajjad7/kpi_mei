@@ -1,0 +1,80 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block home_content %}
+<div class="home-header">
+    <div class="home-header-content">
+        <h1 class="home-header-content-title">Hello {{ request.session.user_name }}!</h1>
+        <div class="home-header-content-subtitle">Welcome to the MEI+ Portal</div>
+        <div class="home-header-content-description">Follow your organization’s clean energy journey with the MEI+
+            portal
+            where you can track opportunities, review development milestones, and receive insights around your clean
+            energy production.</div>
+    </div>
+    <div class="home-header-banner">
+        <img src="{% static 'images/home-welcome-banner.png' %}" alt="Welcome Banner" />
+    </div>
+</div>
+
+<div class="home-tabs-container">
+    <div class="home-tab active-tab" data-filter="all">All Projects</div>
+    <div class="home-tab" data-filter="Pre Contract">Opportunity</div>
+    <div class="home-tab" data-filter="In Construction">In Construction</div>
+    <div class="home-tab" data-filter="Operating">Operating</div>
+</div>
+
+<div class="home-content-body">
+    <div id="all-projects" class="home-tab-content active-content">
+        <div class="home-stats-grid">
+            <div class="home-stat-card">
+                <div class="home-stat-card-row">
+                    <span class="home-stat-title">Total Active Projects</span>
+                    <img src="{% static 'images/icons/flag-icon.png' %}" alt="icon" class="home-stat-icon" />
+                </div>
+                <div class="home-stat-card-row home-stat-card-row-value">
+                    <span class="home-stat-value">12</span>
+                </div>
+            </div>
+            <div class="home-stat-card">
+                <div class="home-stat-card-row">
+                    <span class="home-stat-title">Total Power Capacity</span>
+                    <img src="{% static 'images/icons/bolt-icon.png' %}" alt="icon" class="home-stat-icon" />
+                </div>
+                <div class="home-stat-card-row home-stat-card-row-value">
+                    <span class="home-stat-value">5</span>
+                    <span class="home-stat-unit">kW</span>
+                </div>
+            </div>
+            <div class="home-stat-card">
+                <div class="home-stat-card-row">
+                    <span class="home-stat-title">Total Energy Generated</span>
+                    <img src="{% static 'images/icons/energy-icon.png' %}" alt="icon" class="home-stat-icon" />
+                </div>
+                <div class="home-stat-card-row home-stat-card-row-value">
+                    <span class="home-stat-value">3</span>
+                    <span class="home-stat-unit">kWh</span>
+                </div>
+            </div>
+            <div class="home-stat-card">
+                <div class="home-stat-card-row">
+                    <span class="home-stat-title">Total Emissions Avoided</span>
+                    <img src="{% static 'images/icons/leaf-icon.png' %}" alt="icon" class="home-stat-icon" />
+                </div>
+                <div class="home-stat-card-row home-stat-card-row-value">
+                    <span class="home-stat-value">4</span>
+                    <span class="home-stat-unit">tons</span>
+                </div>
+            </div>
+        </div>
+
+
+        {% include "components/filters.html" %}
+        <script src="{% static 'js/filters.js' %}"></script>
+
+        {% include "components/projects_table.html" %}
+    </div>
+</div>
+
+{% include "components/filter_modal.html" %}
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock %}

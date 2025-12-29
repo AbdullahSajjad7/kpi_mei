@@ -1,0 +1,47 @@
+{% load static %}
+<div class="sidebar">
+    <div class="sidebar-header">
+        <img src="{% static 'images/logo-2.png' %}" alt="mei-logo">
+    </div>
+    <div class="sidebar-menu">
+        <div class="sidebar-menu-list">
+            <div class="sidebar-menu-item">
+                <a class="sidebar-menu-item-link {% if request.resolver_match.url_name == 'home' %}sidebar-menu-item-link-active{% endif %}"
+                    href="{% url 'home' %}">
+                    <img src="{% static 'images/icons/home-icon.png' %}" alt="home">
+                    <span>Overview</span>
+                </a>
+            </div>
+            <div class="sidebar-menu-item">
+                <a class="sidebar-menu-item-link {% if request.resolver_match.url_name == 'portfolio' %}sidebar-menu-item-link-active{% endif %}"
+                    href="{% url 'portfolio' %}">
+                    <img src="{% static 'images/icons/portfolio-icon.png' %}" alt="portfolio">
+                    <span>Portfolio</span>
+                </a>
+            </div>
+            <div class="sidebar-menu-item">
+                <a class="sidebar-menu-item-link {% if request.resolver_match.url_name == 'billing' %}sidebar-menu-item-link-active{% endif %}"
+                    href="{% url 'billing' %}">
+                    <img src="{% static 'images/icons/billing-icon.png' %}" alt="billing">
+                    <span>Billing</span>
+                </a>
+            </div>
+            <div class="sidebar-menu-item">
+                <a class="sidebar-menu-item-link {% if request.resolver_match.url_name == 'resources' %}sidebar-menu-item-link-active{% endif %}"
+                    href="{% url 'resources' %}">
+                    <img src="{% static 'images/icons/resources-icon.png' %}" alt="resources">
+                    <span>Resources</span>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar-menu-profile">
+            <div class="sidebar-menu-item">
+                <a class="sidebar-menu-item-link {% if request.resolver_match.url_name == 'profile' %}sidebar-menu-item-link-active{% endif %}"
+                    href="{% url 'profile' %}">
+                    <img src="{% static 'images/icons/profile-icon.png' %}" alt="home">
+                    <span>{{ request.session.user_name|default:"Profile" }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

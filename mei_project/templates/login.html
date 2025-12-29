@@ -1,0 +1,31 @@
+{% extends "base_auth.html" %} {% block title %} Login {% endblock %}
+{% block content %}
+<div class="auth-form-text">
+  Our Energy, <br />
+  Your Power
+</div>
+<div class="auth-form">
+  <form class="custom-form" action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group custom-form-group">
+      <label class="custom-form-label" for="email">Email</label>
+      <input class="custom-form-input" type="text" id="email" name="email" />
+    </div>
+    <div class="form-group custom-form-group">
+      <label class="custom-form-label" for="password">Password</label>
+      <input class="custom-form-input" type="password" id="password" name="password" />
+    </div>
+
+    <div class="auth-buttons-container">
+      <button class="custom-primary-button" type="submit">
+        Login to Customer Portal
+      </button>
+      <a class="custom-link custom-auth-form-link" href="{% url 'password_reset' %}">Forgot Your Password?</a>
+      <a class="custom-link custom-auth-form-link" href="{% url 'create_account' %}">Don't have an account?</a>
+    </div>
+  </form>
+  {% if error %}
+  <div class="auth-error"><span>{{ error }}</span></div>
+  {% endif %}
+</div>
+{% endblock %}
