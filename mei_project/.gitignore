@@ -23,3 +23,6 @@ Thumbs.db
 # IDEs
 .idea/
 .vscode/
+
+# Ignore local .env if you create one
+.env

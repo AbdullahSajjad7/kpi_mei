@@ -172,10 +172,8 @@ def resources(request):
     return render(request, 'resources.html')
 
 def profile(request):
-    # Get user data from session
     user_email = request.session.get('user_email', '')
     
-    # Fetch current user data from /auth/me endpoint
     if request.method == 'GET' and 'auth_token' in request.session:
         try:
             me_url = "https://x8ki-letl-twmt.n7.xano.io/api:QW2Cw8Kl/auth/me"
@@ -189,25 +187,22 @@ def profile(request):
         except:
             pass
     
-    # Handle profile update
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
         password = request.POST.get('password')
         
-        # Get auth token from session
         auth_token = request.session.get('auth_token')
         
         if not auth_token:
             return render(request, 'profile.html', {'error': 'Authentication required. Please log in again.'})
         
-        # Prepare payload - only include fields that are provided
         payload = {}
         if name:
             payload['name'] = name
         if email:
             payload['email'] = email
-        if password:  # Only include password if user wants to change it
+        if password: 
             payload['password'] = password
         
         url = "https://x8ki-letl-twmt.n7.xano.io/api:QW2Cw8Kl/update_user"
@@ -221,7 +216,6 @@ def profile(request):
             data = response.json()
             
             if response.status_code == 200:
-                # Update session with new data
                 if name:
                     request.session['user_name'] = name
                 if email:

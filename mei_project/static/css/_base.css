@@ -168,7 +168,6 @@ body {
   color: #000000;
 }
 
-/* Hamburger Menu Button */
 .hamburger-menu {
   display: none;
   position: fixed;
@@ -215,7 +214,6 @@ body {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Sidebar Overlay */
 .sidebar-overlay {
   display: none;
   position: fixed;
@@ -233,7 +231,6 @@ body {
   opacity: 1;
 }
 
-/* Responsive Sidebar - Under 1000px */
 @media (max-width: 1000px) {
   .hamburger-menu {
     display: flex !important;

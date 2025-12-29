@@ -40,13 +40,11 @@
     const errorContainer = document.getElementById('error-container');
     const errorSpan = errorContainer.querySelector('span');
 
-    // Clear previous errors
     errorContainer.style.display = 'none';
     errorSpan.textContent = '';
 
     if (password !== confirmPassword) {
       e.preventDefault();
-      // Show error in the container
       errorSpan.textContent = 'Passwords do not match!';
       errorContainer.style.display = 'flex';
     }
